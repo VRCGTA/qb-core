@@ -88,7 +88,7 @@ QBShared.Jobs = {
 		},
 	},
 	mechanic2 = {
-		label = 'LS Customs',
+		label = "Los Sato's Customs",
 		type = 'mechanic',
 		defaultDuty = true,
 		offDutyPay = false,
@@ -101,7 +101,7 @@ QBShared.Jobs = {
 		},
 	},
 	mechanic3 = {
-		label = 'LS Customs',
+		label = "Garage Burger",
 		type = 'mechanic',
 		defaultDuty = true,
 		offDutyPay = false,
