@@ -110,10 +110,10 @@ local Translations = {
     },
 }
 
-if GetConvar('qb_locale', 'en') == 'cs' then
+Locale:registerLocale(false, 'cs', function()
     Lang = Locale:new({
         phrases = Translations,
         warnOnMissing = true,
         fallbackLang = Lang,
     })
-end
+end)
