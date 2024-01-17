@@ -143,3 +143,36 @@ function Locale:delete(phraseTarget, prefix)
         end
     end
 end
+
+local languages = {
+    "en",
+    "fr",
+    "de",
+    "it",
+    "es",
+    "pt-br",
+    "pl",
+    "ru",
+    "ko",
+    "tw",
+    "ja",
+    "mx",
+    "cn"
+}
+
+function Locale:registerLocale(isBaseLang, langCode, cb)
+    if not IsDuplicityVersion() then
+        if isBaseLang then
+            cb()
+        elseif languages[GetCurrentLanguage() + 1] == langCode then
+            cb()
+        end
+    else
+        defaultLang = GetConvar('qb_locale', 'en')
+        if isBaseLang then
+            cb()
+        elseif defaultLang == langCode then
+            cb()
+        end
+    end
+end
