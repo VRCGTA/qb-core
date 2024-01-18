@@ -634,7 +634,7 @@ local Vehicles = {
     { model = 'miljet',        name = 'Miljet',                        brand = 'Buckingham',      price = PLANE_PRICE+45000,   category = 'planes',         type = 'plane',      shop = 'air' },
     { model = 'besra',         name = 'Besra',                         brand = 'Western Company', price = PLANE_PRICE+45000,   category = 'planes',         type = 'plane',      shop = 'none' },
     { model = 'vestra',        name = 'Vestra',                        brand = 'Buckingham',      price = PLANE_PRICE+45000,   category = 'planes',         type = 'plane',      shop = 'air' },
-    { model = 'cargoplane',    name = 'Cargo Plane',                   brand = 'JoBuilt',         price = PLANE_PRICE+45000,   category = 'planes',         type = 'plane',      shop = 'air' },
+    -- { model = 'cargoplane',    name = 'Cargo Plane',                   brand = 'JoBuilt',         price = PLANE_PRICE+45000,   category = 'planes',         type = 'plane',      shop = 'air' }, -- so biiiiiiiiiig
     { model = 'velum',         name = 'Velum',                         brand = 'JoBuilt',         price = PLANE_PRICE+45000,   category = 'planes',         type = 'plane',      shop = 'air' },
     { model = 'titan',         name = 'Titan',                         brand = 'Unknown',         price = PLANE_PRICE+45000,   category = 'planes',         type = 'plane',      shop = 'none' },
     { model = 'shamal',        name = 'Shamal',                        brand = 'Buckingham',      price = PLANE_PRICE+45000,   category = 'planes',         type = 'plane',      shop = 'air' },
