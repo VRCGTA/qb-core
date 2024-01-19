@@ -308,7 +308,7 @@ function PaycheckInterval()
     if next(QBCore.Players) then
         for _, Player in pairs(QBCore.Players) do
             if Player then
-                local payment = Player.PlayerData.job.payment
+                local payment = QBCore.Shared.Jobs[Player.PlayerData.job.name].grades[tostring(Player.PlayerData.job.grade.level)].payment
                 if Player.PlayerData.job and payment > 0 and (QBShared.Jobs[Player.PlayerData.job.name].offDutyPay or Player.PlayerData.job.onduty) then
                     if QBCore.Config.Money.PayCheckSociety then
                         local account = exports['qb-management']:GetAccount(Player.PlayerData.job.name)
