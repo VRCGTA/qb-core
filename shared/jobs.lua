@@ -20,9 +20,11 @@ QBShared.Jobs = {
 		grades = {
 			['0'] = { name = 'Recruit', payment = 200 },
 			['1'] = { name = 'Officer', payment = 500 },
-			['2'] = { name = 'Sergeant', payment = 800 },
+			['2'] = { name = 'Police', payment = 800 },
 			['3'] = { name = 'Lieutenant', payment = 1000 },
-			['4'] = { name = 'Chief', isboss = true, payment = 1500 },
+			['4'] = { name = 'Commander', payment = 1200 },
+			['5'] = { name = 'Assistant Chief', payment = 1400 },
+			['6'] = { name = 'Chief', isboss = true, payment = 1500 },
 		},
 	},
 	ambulance = {
