@@ -148,4 +148,15 @@ QBShared.Weapons = {
 	-- Animals
 	[`weapon_animal`]                = { name = 'weapon_animal', label = 'Animal', weapontype = 'Animals', ammotype = nil, damagereason = 'Mauled' },
 	[`weapon_cougar`]                = { name = 'weapon_cougar', label = 'Cougar', weapontype = 'Animals', ammotype = nil, damagereason = 'Mauled' },
+
+	-- Airsoft
+	[`weapon_airsoftglock20`]                = { name = 'weapon_airsoftglock20', label = 'Airsoft Glock20', weapontype = 'Pistol', ammotype = 'AMMO_SMG', damagereason = 'Hit!' },
+	[`weapon_airsoftak47`]                = { name = 'weapon_airsoftak47', label = 'Airsoft AK47', weapontype = 'Assault Rifle', ammotype = 'AMMO_SMG', damagereason = 'Hit!' },
+	[`weapon_airsoftm4`]                = { name = 'weapon_airsoftm4', label = 'Airsoft M4', weapontype = 'Assault Rifle', ammotype = 'AMMO_SMG', damagereason = 'Hit!' },
+	[`weapon_airsoftm249`]              = { name = 'weapon_airsoftm249', label = 'Airsoft M249', weapontype = 'Light Machine Gun', ammotype = 'AMMO_SMG', damagereason = 'Hit!' },
+	[`weapon_airsoftg36c`]              = { name = 'weapon_airsoftg36c', label = 'Airsoft G36C', weapontype = 'Submachine Gun', ammotype = 'AMMO_SMG', damagereason = 'Hit!' },
+	[`weapon_airsoftmp5`]              = { name = 'weapon_airsoftmp5', label = 'Airsoft MP5', weapontype = 'Submachine Gun', ammotype = 'AMMO_SMG', damagereason = 'Hit!' },
+	[`weapon_airsoftmicrouzi`]              = { name = 'weapon_airsoftmicrouzi', label = 'Airsoft MicroUzi', weapontype = 'Submachine Gun', ammotype = 'AMMO_SMG', damagereason = 'Hit!' },
+	[`weapon_airsoftr700`]           = { name = 'weapon_airsoftr700', label = 'Airsoft R700', weapontype = 'Sniper Rifle', ammotype = 'AMMO_SMG', damagereason = 'Hit!' },
+	[`weapon_airsoftr870`]           = { name = 'weapon_airsoftr870', label = 'Airsoft R870', weapontype = 'Shotgun', ammotype = 'AMMO_SMG', damagereason = 'Hit!' },
 }
