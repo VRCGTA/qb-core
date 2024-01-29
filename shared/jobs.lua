@@ -60,10 +60,10 @@ QBShared.Jobs = {
 		offDutyPay = false,
 		grades = {
 			['0'] = { name = 'Recruit', payment = 50 },
-			['1'] = { name = 'House Sales', payment = 75 },
-			['2'] = { name = 'Business Sales', payment = 100 },
-			['3'] = { name = 'Broker', payment = 125 },
-			['4'] = { name = 'Manager', isboss = true, payment = 150 },
+			['1'] = { name = 'House Sales', payment = 100 },
+			['2'] = { name = 'Business Sales', payment = 200 },
+			['3'] = { name = 'Broker', payment = 250 },
+			['4'] = { name = 'Manager', isboss = true, payment = 300 },
 		},
 	},
 	taxi = {
@@ -163,16 +163,37 @@ QBShared.Jobs = {
         grades = {
             ['0'] = {
                 name = 'Worker',
-                payment = 30,
+                payment = 100,
             },
             ['1'] = {
                 name = 'Vice Boss',
-                payment = 70,
+                payment = 200,
             },
             ['2'] = {
                 name = 'Boss',
                 isboss = true,
-                payment = 130,
+                payment = 300,
+            },
+        }
+    },
+
+	["ads"] = {
+        label = "Advertising Agency",
+        offDutyPay = false,
+        defaultDuty = false,
+        grades = {
+            ['0'] = {
+                name = 'Worker',
+                payment = 100,
+            },
+            ['1'] = {
+                name = 'Vice Boss',
+                payment = 200,
+            },
+            ['2'] = {
+                name = 'Boss',
+                isboss = true,
+                payment = 300,
             },
         }
     },
