@@ -12,6 +12,16 @@ QBShared.Jobs = {
 	vineyard = { label = 'Vineyard', defaultDuty = true, offDutyPay = false, grades = { ['0'] = { name = 'Picker', payment = 50 } } },
 	hotdog = { label = 'Hotdog', defaultDuty = true, offDutyPay = false, grades = { ['0'] = { name = 'Sales', payment = 50 } } },
 
+	'casino' = {
+        label = 'Casino',
+        defaultDuty = true,
+        grades = {
+            ['0'] = { name = 'Novice', payment = 50 },
+            ['1'] = { name = 'Experienced', payment = 100 },
+            ['2'] = { name = 'Boss', isboss = true, payment = 200 },
+        },
+    },
+	
 	reporter = {
 		label = 'VRCLSNEWS',
 		type = 'reporter',
