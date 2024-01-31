@@ -12,7 +12,7 @@ QBShared.Jobs = {
 	vineyard = { label = 'Vineyard', defaultDuty = true, offDutyPay = false, grades = { ['0'] = { name = 'Picker', payment = 50 } } },
 	hotdog = { label = 'Hotdog', defaultDuty = true, offDutyPay = false, grades = { ['0'] = { name = 'Sales', payment = 50 } } },
 
-	'casino' = {
+	casino = {
         label = 'Casino',
         defaultDuty = true,
         grades = {
