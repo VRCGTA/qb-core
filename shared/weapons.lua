@@ -159,4 +159,11 @@ QBShared.Weapons = {
 	[`weapon_airsoftmicrouzi`]              = { name = 'weapon_airsoftmicrouzi', label = 'Airsoft MicroUzi', weapontype = 'Submachine Gun', ammotype = 'AMMO_SMG', damagereason = 'Hit!' },
 	[`weapon_airsoftr700`]           = { name = 'weapon_airsoftr700', label = 'Airsoft R700', weapontype = 'Sniper Rifle', ammotype = 'AMMO_SMG', damagereason = 'Hit!' },
 	[`weapon_airsoftr870`]           = { name = 'weapon_airsoftr870', label = 'Airsoft R870', weapontype = 'Shotgun', ammotype = 'AMMO_SMG', damagereason = 'Hit!' },
+	[`weapon_dragon_katana_red`] 		 		 = {['name'] = 'weapon_dragon_katana_red', 		['label'] = 'Weapon Red Dragon Katana', 		['ammotype'] = nil,	['damagereason'] = 'Knifed / Stabbed / Eviscerated'},
+	[`weapon_dragon_katana_blue`] 		 		 = {['name'] = 'weapon_dragon_katana_blue', 		['label'] = 'Weapon Blue Dragon Katana', 		['ammotype'] = nil,	['damagereason'] = 'Knifed / Stabbed / Eviscerated'},
+	[`weapon_dragon_katana_green`] 		 		 = {['name'] = 'weapon_dragon_katana_green', 		['label'] = 'Weapon Green Dragon Katana', 		['ammotype'] = nil,	['damagereason'] = 'Knifed / Stabbed / Eviscerated'},
+	[`weapon_dragon_katana_purple`] 		 		 = {['name'] = 'weapon_dragon_katana_purple', 		['label'] = 'Weapon Purple Dragon Katana', 		['ammotype'] = nil,	['damagereason'] = 'Knifed / Stabbed / Eviscerated'},
+	[`weapon_dragon_katana_yellow`] 		 		 = {['name'] = 'weapon_dragon_katana_yellow', 		['label'] = 'Weapon Yellow Dragon Katana', 		['ammotype'] = nil,	['damagereason'] = 'Knifed / Stabbed / Eviscerated'},
+
+
 }
