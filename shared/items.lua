@@ -954,11 +954,39 @@ QBShared.Items = {
   ["chair109"] 					= {["name"] = "chair109",  	    			["label"] = "Cream Wicker Chair",		["weight"] = 100, 		["type"] = "item", 		["image"] = "chair109.png", 	["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "" },
   ["chair110"] 					= {["name"] = "chair110",  	    			["label"] = "Black Metal Dining Chair",	["weight"] = 100, 		["type"] = "item", 		["image"] = "chair110.png", 	["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "" },
   
-  
   -- katana
   ['weapon_dragon_katana_red']				 = {['name'] = 'weapon_dragon_katana_red', 		 		['label'] = 'Red Dragon Katana', 	        		['weight'] = 1000, 		['type'] = 'weapon', 	['ammotype'] = nil,						['image'] = 'weapon_dragon_katana_red.png', 		['unique'] = true, 		['useable'] = true, 	['description'] = 'Red Dragon Katana'},
   ['weapon_dragon_katana_blue']				 = {['name'] = 'weapon_dragon_katana_blue', 		 		['label'] = 'Blue Dragon Katana', 	        		['weight'] = 1000, 		['type'] = 'weapon', 	['ammotype'] = nil,						['image'] = 'weapon_dragon_katana_Blue.png', 		['unique'] = true, 		['useable'] = true, 	['description'] = 'Blue Dragon Katana'},
   ['weapon_dragon_katana_green']				 = {['name'] = 'weapon_dragon_katana_green', 		 		['label'] = 'Green Dragon Katana', 	        		['weight'] = 1000, 		['type'] = 'weapon', 	['ammotype'] = nil,						['image'] = 'weapon_dragon_katana_Green.png', 		['unique'] = true, 		['useable'] = true, 	['description'] = 'Green Dragon Katana'},
   ['weapon_dragon_katana_purple']				 = {['name'] = 'weapon_dragon_katana_purple', 		 		['label'] = 'Purple Dragon Katana', 	        		['weight'] = 1000, 		['type'] = 'weapon', 	['ammotype'] = nil,						['image'] = 'weapon_dragon_katana_Purple.png', 		['unique'] = true, 		['useable'] = true, 	['description'] = 'Purple Dragon Katana'},
   ['weapon_dragon_katana_yellow']				 = {['name'] = 'weapon_dragon_katana_yellow', 		 		['label'] = 'Yellow Dragon Katana', 	        		['weight'] = 1000, 		['type'] = 'weapon', 	['ammotype'] = nil,						['image'] = 'weapon_dragon_katana_Yellow.png', 		['unique'] = true, 		['useable'] = true, 	['description'] = 'Yellow Dragon Katana'},
+
+    -- m-Hunting
+    -- Meat
+    ['badmeat']                 = {['name'] = 'badmeat',                ['label'] = 'Low Quality Meat',             ['weight'] = 20,        ['type'] = 'item',      ['image'] = 'badmeat.png',                  ['unique'] = false,    ['useable'] = true,     ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = ''},  
+    ['medmeat']                 = {['name'] = 'medmeat',                ['label'] = 'Medium Quality Meat',          ['weight'] = 20,        ['type'] = 'item',      ['image'] = 'medmeat.png',                  ['unique'] = false,    ['useable'] = true,     ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = ''},  
+    ['maxmeat']                 = {['name'] = 'maxmeat',                ['label'] = 'Maximum Quality Meat',         ['weight'] = 20,        ['type'] = 'item',      ['image'] = 'maxmeat.png',                  ['unique'] = false,    ['useable'] = true,     ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = ''},  
+    
+    -- Leather
+    ['badleather']              = {['name'] = 'badleather',             ['label'] = 'Low Quality Leather',          ['weight'] = 20,        ['type'] = 'item',      ['image'] = 'badleather.png',               ['unique'] = false,    ['useable'] = true,     ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = ''},  
+    ['medleather']              = {['name'] = 'medleather',             ['label'] = 'Medium Quality Leather',       ['weight'] = 20,        ['type'] = 'item',      ['image'] = 'medleather.png',               ['unique'] = false,    ['useable'] = true,     ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = ''},  
+    ['maxleather']              = {['name'] = 'maxleather',             ['label'] = 'Maximum Quality Leather',      ['weight'] = 20,        ['type'] = 'item',      ['image'] = 'maxleather.png',               ['unique'] = false,    ['useable'] = true,     ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = ''},  
+     
+     -- Horns
+    ['badhorns']                = {['name'] = 'badhorns',               ['label'] = 'Low Quality Horns',            ['weight'] = 20,        ['type'] = 'item',      ['image'] = 'badhorns.png',                 ['unique'] = false,    ['useable'] = true,     ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = ''},  
+    ['medhorns']                = {['name'] = 'medhorns',               ['label'] = 'Medium Quality Horns',         ['weight'] = 20,        ['type'] = 'item',      ['image'] = 'medhorns.png',                 ['unique'] = false,    ['useable'] = true,     ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = ''},  
+    ['maxhorns']                = {['name'] = 'maxhorns',               ['label'] = 'Maximum Quality Horns',        ['weight'] = 20,        ['type'] = 'item',      ['image'] = 'maxhorns.png',                 ['unique'] = false,    ['useable'] = true,     ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = ''},   
+
+    -- Knifes
+    ['knifelevel1']             = {['name'] = 'knifelevel1',            ['label'] = 'Knife Level 1',                ['weight'] = 20,        ['type'] = 'item',      ['image'] = 'knifelevel1.png',              ['unique'] = false,    ['useable'] = true,     ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = ''},  
+    ['knifelevel2']             = {['name'] = 'knifelevel2',            ['label'] = 'Knife Level 2',                ['weight'] = 20,        ['type'] = 'item',      ['image'] = 'knifelevel2.png',              ['unique'] = false,    ['useable'] = true,     ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = ''},  
+    ['knifelevel3']             = {['name'] = 'knifelevel3',            ['label'] = 'Knife Level 3',                ['weight'] = 20,        ['type'] = 'item',      ['image'] = 'knifelevel3.png',              ['unique'] = false,    ['useable'] = true,     ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = ''},  
+    ['knifelevel4']             = {['name'] = 'knifelevel4',            ['label'] = 'Knife Level 4',                ['weight'] = 20,        ['type'] = 'item',      ['image'] = 'knifelevel4.png',              ['unique'] = false,    ['useable'] = true,     ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = ''},  
+    ['knifelevel5']             = {['name'] = 'knifelevel5',            ['label'] = 'Knife Level 5',                ['weight'] = 20,        ['type'] = 'item',      ['image'] = 'knifelevel5.png',              ['unique'] = false,    ['useable'] = true,     ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = ''},  
+    -- Bait
+    ["huntingbait"]             = {["name"] = "huntingbait",            ["label"] = "Animal Nait",                  ["weight"] = 25,        ["type"] = "item",      ["image"] = "huntingbait.png",              ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = ""}, 
+    
+    -- Bait
+    ["huntinglegalbait"]        = {["name"] = "huntinglegalbait",       ["label"] = "Legal Bait",                   ["weight"] = 25,        ["type"] = "item",      ["image"] = "huntinglegalbait.png",         ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = ""},
+    ["huntingillegalbait"]      = {["name"] = "huntingillegalbait",     ["label"] = "Ilegal Bait",                  ["weight"] = 25,        ["type"] = "item",      ["image"] = "huntingillegalbait.png",       ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = ""},
 }
