@@ -989,4 +989,7 @@ QBShared.Items = {
     -- Bait
     ["huntinglegalbait"]        = {["name"] = "huntinglegalbait",       ["label"] = "Legal Bait",                   ["weight"] = 25,        ["type"] = "item",      ["image"] = "huntinglegalbait.png",         ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = ""},
     ["huntingillegalbait"]      = {["name"] = "huntingillegalbait",     ["label"] = "Ilegal Bait",                  ["weight"] = 25,        ["type"] = "item",      ["image"] = "huntingillegalbait.png",       ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = ""},
+
+    ["blackmoney"] = {["name"] = "blackmoney", ["label"] = "Black Money", ["weight"] = 0, ["type"] = "item", ["image"] = "blackmoney.png", unique = false, useable = false, shouldClose = true, combinable = nil, description = 'Needs to be cleaned.' },
+
 }
