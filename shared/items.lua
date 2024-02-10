@@ -216,6 +216,7 @@ QBShared.Items = {
     mg_ammo                      = { name = 'mg_ammo', label = 'MG ammo', weight = 1000, type = 'item', image = 'mg_ammo.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'Ammo for Machine Guns' },
     snp_ammo                     = { name = 'snp_ammo', label = 'Sniper ammo', weight = 1000, type = 'item', image = 'rifle_ammo.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'Ammo for Sniper Rifles' },
     emp_ammo                     = { name = 'emp_ammo', label = 'EMP Ammo', weight = 200, type = 'item', image = 'emp_ammo.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'Ammo for EMP Launcher' },
+    rpg_ammo                     = { name = 'rpg_ammo', label = 'RPG Ammo', weight = 1000, type = 'item', image = 'rpg_ammo.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'Ammo for RPG' },
 
     -- Card ITEMS
     id_card                      = { name = 'id_card', label = 'ID Card', weight = 0, type = 'item', image = 'id_card.png', unique = true, useable = true, shouldClose = false, combinable = nil, description = 'A card containing all your information to identify yourself' },
@@ -471,7 +472,8 @@ QBShared.Items = {
 
 	["internals"] =         {["name"] = "internals",        ["label"] = "Internal Cosmetics",	["weight"] = 0, ["type"] = "item",  ["image"] = "internals.png", 		["unique"] = false,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
 	["externals"] =         {["name"] = "externals",        ["label"] = "Exterior Cosmetics",	["weight"] = 0, ["type"] = "item",  ["image"] = "mirror.png", 			["unique"] = false,  ["useable"] = true, ["shouldClose"] = true, ["description"] = ""},
-
+    manual                      = { name = 'manual', label = 'Manual Transmission', weight = 0, type = 'item', image = 'manual.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'Manual Transmission change for vehicles' },
+    underglow                   = { name = 'underglow', label = 'Underglow LEDS', weight = 0, type = 'item', image = 'underglow.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'Underglow addition for vehicles' },
 	--Repair Parts
 	["newoil"] =            {["name"] = "newoil",           ["label"] = "Car Oil",				["weight"] = 0, ["type"] = "item",  ["image"] = "caroil.png",           ["unique"] = false, ["useable"] = false,["shouldClose"] = false,["description"] = ""},
 	["sparkplugs"]=         {["name"] = "sparkplugs",       ["label"] = "Spark Plugs",			["weight"] = 0, ["type"] = "item",  ["image"] = "sparkplugs.png",       ["unique"] = false, ["useable"] = false,["shouldClose"] = false,["description"] = ""},
@@ -991,5 +993,8 @@ QBShared.Items = {
     ["huntingillegalbait"]      = {["name"] = "huntingillegalbait",     ["label"] = "Ilegal Bait",                  ["weight"] = 25,        ["type"] = "item",      ["image"] = "huntingillegalbait.png",       ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = ""},
 
     ["blackmoney"] = {["name"] = "blackmoney", ["label"] = "Black Money", ["weight"] = 0, ["type"] = "item", ["image"] = "blackmoney.png", unique = false, useable = false, shouldClose = true, combinable = nil, description = 'Needs to be cleaned.' },
+
+    -- qb-holster
+    ['holster']						 = {['name'] = 'holster', 						['label'] = 'Holster', 					['weight'] = 5, 		['type'] = 'item', 		['image'] = 'holster.png',		 		['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true, 	['combinable'] = nil,  ['description'] = 'An holster to quickly draw your handgun.'},
 
 }
