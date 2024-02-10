@@ -1070,4 +1070,6 @@ QBShared.Items = {
     ["green_coral"]          = {["name"] = "green_coral",           ["label"] = "Green Coral",              ["weight"] = 500,      ["type"] = "item",       ["image"] = "green_coral.png",      ["unique"] = false,     ["useable"] = false,    ["shouldClose"] = false,     ["combinable"] = nil,   ["description"] = ""},
     ["babyblue_coral"]       = {["name"] = "babyblue_coral",        ["label"] = "Baby Blue Coral",          ["weight"] = 500,      ["type"] = "item",       ["image"] = "babyblue_coral.png",   ["unique"] = false,     ["useable"] = false,    ["shouldClose"] = false,     ["combinable"] = nil,   ["description"] = ""},
 
+    -- chalkboard
+    ['chalkboardsign'] = {['name'] = 'chalkboardsign', ['label'] = 'Chalk Board Sign', ['weight'] = 6000, ['type'] = 'item', ['image'] = 'chalkboardsign.png', ['unique'] = true, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'A chalk board that you can draw Ds on it!'},
 }
