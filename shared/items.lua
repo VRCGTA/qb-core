@@ -1072,4 +1072,11 @@ QBShared.Items = {
 
     -- chalkboard
     ['chalkboardsign'] = {['name'] = 'chalkboardsign', ['label'] = 'Chalk Board Sign', ['weight'] = 6000, ['type'] = 'item', ['image'] = 'chalkboardsign.png', ['unique'] = true, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'A chalk board that you can draw Ds on it!'},
+
+    --rahe
+    ['racingtablet'] = { ['name'] = 'racingtablet', ['label'] = 'Racing tablet', ['weight'] = 1000, ['type'] = 'item', ['image'] = 'racingtablet.png', ['unique'] = true, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Seems like something to do with cars.' },
+    ['boostingtablet'] = { ['name'] = 'boostingtablet', ['label'] = 'Boosting tablet', ['weight'] = 1000, ['type'] = 'item', ['image'] = 'boostingtablet.png', ['unique'] = true, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = "Seems like something's installed on this."},
+    ['hackingdevice'] = { ['name'] = 'hackingdevice', ['label'] = 'Hacking device', ['weight'] = 1000, ['type'] = 'item', ['image'] = 'hackingdevice.png', ['unique'] = true, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Will allow you to bypass vehicle security systems.' },
+    ['gpshackingdevice'] = { ['name'] = 'gpshackingdevice', ['label'] = 'GPS hacking device', ['weight'] = 1000, ['type'] = 'item', ['image'] = 'gpshackingdevice.png', ['unique'] = true, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'If you wish to disable vehicle GPS systems.' },
+
 }
