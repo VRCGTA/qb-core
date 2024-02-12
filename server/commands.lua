@@ -317,6 +317,7 @@ QBCore.Commands.Add('me', Lang:t('command.me.help'), { { name = Lang:t('command.
         local tCoords = GetEntityCoords(target)
         if target == ped or #(pCoords - tCoords) < 20 then
             TriggerClientEvent('QBCore:Command:ShowMe3D', Player, source, msg)
+            exports['xsound']:TextToSpeechPos(Player, "vrc_tts", 'ja-JP', msg, 0.5, pCoords, false)
         end
     end
 end, 'user')
