@@ -727,6 +727,10 @@ local Vehicles = {
     { model = 'openwheel1',    name = 'BR8',                           brand = 'Benefactor',      price = 100000,  category = 'openwheel',      type = 'automobile', shop = 'none', job = 'none' },
     { model = 'formula2',      name = 'R88',                           brand = 'Ocelot',          price = 100000,  category = 'openwheel',      type = 'automobile', shop = 'none', job = 'none' },
     { model = 'formula',       name = 'PR4',                           brand = 'Progen',          price = 100000,  category = 'openwheel',      type = 'automobile', shop = 'none', job = 'none' },
+
+
+    -- test
+    { model = 'polmavvrc',        name = 'Police Maverick VRC',               brand = 'Buckingham',      price = 110000,  category = 'emergency',      type = 'automobile', shop = 'none', job = 'none' },
 }
 
 for i = 1, #Vehicles do
