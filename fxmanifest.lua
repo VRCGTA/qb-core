@@ -43,7 +43,9 @@ files {
     'html/index.html',
     'html/css/style.css',
     'html/css/drawtext.css',
-    'html/js/*.js'
+    'html/js/*.js',
+    '@vrcgta-qb/items.json',
+    '@vrcgta-qb/vehicles.json'
 }
 
 dependency 'oxmysql'
