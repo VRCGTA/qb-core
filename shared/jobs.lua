@@ -22,6 +22,22 @@ QBShared.Jobs = {
             ['2'] = { name = 'Boss', isboss = true, payment = 200 },
         },
     },
+	practitioner = {
+		label = 'Practitioner',
+        defaultDuty = true,
+        grades = {
+            ['0'] = { name = 'Novice', payment = 50 },
+            ['1'] = { name = 'Boss', isboss = true, payment = 200 },
+        },
+	},
+	burgershot = {
+		label = 'Burgershot',
+        defaultDuty = true,
+        grades = {
+            ['0'] = { name = 'Novice', payment = 50 },
+            ['1'] = { name = 'Boss', isboss = true, payment = 200 },
+        },
+	},
 	
 	reporter = {
 		label = 'VRCLSNEWS',
@@ -46,10 +62,8 @@ QBShared.Jobs = {
 			['0'] = { name = 'Recruit', payment = 200 },
 			['1'] = { name = 'Officer', payment = 500 },
 			['2'] = { name = 'Police', payment = 800 },
-			['3'] = { name = 'Lieutenant', payment = 1000 },
-			['4'] = { name = 'Commander', payment = 1200 },
-			['5'] = { name = 'Assistant Chief', payment = 1400 },
-			['6'] = { name = 'Chief', isboss = true, payment = 1500 },
+			['3'] = { name = 'Assistant Chief', payment = 1400 },
+			['4'] = { name = 'Chief', isboss = true, payment = 1500 },
 		},
 	},
 	ambulance = {
