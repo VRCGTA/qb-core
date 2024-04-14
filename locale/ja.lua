@@ -26,7 +26,7 @@ local Translations = {
         teleported_waypoint = 'ウェイポイントにテレポートしました',
     },
     info = {
-        received_paycheck = '$%{value}の給与を受け取った',
+        received_paycheck = '𝕍%{value}の給与を受け取った',
         job_info = '職業: %{value} | 階級: %{value2} | 勤務: %{value3}',
         gang_info = 'ギャング: %{value} | 階級: %{value2}',
         on_duty = '出勤しました！',
