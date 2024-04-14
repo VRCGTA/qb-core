@@ -23,6 +23,7 @@ for i = 1, #Vehicles do
         category = Vehicles[i].category,
         hash = joaat(Vehicles[i].model),
         type = Vehicles[i].type,
-        shop = Vehicles[i].shop
+        shop = Vehicles[i].shop,
+        class = Vehicles[i].class,
     }
 end
