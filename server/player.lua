@@ -556,15 +556,9 @@ end
 
 local playertables = { -- Add tables as needed
     { table = 'players' },
-    { table = 'apartments' },
     { table = 'bank_accounts' },
-    { table = 'crypto_transactions' },
-    { table = 'phone_invoices' },
-    { table = 'phone_messages' },
     { table = 'playerskins' },
-    { table = 'player_contacts' },
     { table = 'player_houses' },
-    { table = 'player_mails' },
     { table = 'player_outfits' },
     { table = 'player_vehicles' }
 }
