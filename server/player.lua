@@ -104,7 +104,6 @@ function QBCore.Player.CheckPlayerData(source, PlayerData)
     PlayerData.charinfo.gender = PlayerData.charinfo.gender or 0
     PlayerData.charinfo.backstory = PlayerData.charinfo.backstory or 'placeholder backstory'
     PlayerData.charinfo.nationality = PlayerData.charinfo.nationality or 'USA'
-    PlayerData.charinfo.phone = PlayerData.charinfo.phone or QBCore.Functions.CreatePhoneNumber()
     PlayerData.charinfo.account = PlayerData.charinfo.account or QBCore.Functions.CreateAccountNumber()
     -- Metadata
     PlayerData.metadata = PlayerData.metadata or {}
@@ -122,10 +121,8 @@ function QBCore.Player.CheckPlayerData(source, PlayerData)
     PlayerData.metadata['phone'] = PlayerData.metadata['phone'] or {}
     PlayerData.metadata['fitbit'] = PlayerData.metadata['fitbit'] or {}
     PlayerData.metadata['bloodtype'] = PlayerData.metadata['bloodtype'] or QBCore.Config.Player.Bloodtypes[math.random(1, #QBCore.Config.Player.Bloodtypes)]
-    PlayerData.metadata['dealerrep'] = PlayerData.metadata['dealerrep'] or 0
     PlayerData.metadata['craftingrep'] = PlayerData.metadata['craftingrep'] or 0
     PlayerData.metadata['attachmentcraftingrep'] = PlayerData.metadata['attachmentcraftingrep'] or 0
-    PlayerData.metadata['currentapartment'] = PlayerData.metadata['currentapartment'] or nil
     PlayerData.metadata['jobrep'] = PlayerData.metadata['jobrep'] or {}
     PlayerData.metadata['jobrep']['tow'] = PlayerData.metadata['jobrep']['tow'] or 0
     PlayerData.metadata['jobrep']['trucker'] = PlayerData.metadata['jobrep']['trucker'] or 0
@@ -133,7 +130,6 @@ function QBCore.Player.CheckPlayerData(source, PlayerData)
     PlayerData.metadata['jobrep']['hotdog'] = PlayerData.metadata['jobrep']['hotdog'] or 0
     PlayerData.metadata['callsign'] = PlayerData.metadata['callsign'] or 'NO CALLSIGN'
     PlayerData.metadata['fingerprint'] = PlayerData.metadata['fingerprint'] or QBCore.Player.CreateFingerId()
-    PlayerData.metadata['walletid'] = PlayerData.metadata['walletid'] or QBCore.Player.CreateWalletId()
     PlayerData.metadata['criminalrecord'] = PlayerData.metadata['criminalrecord'] or {
         ['hasRecord'] = false,
         ['date'] = nil
@@ -149,10 +145,6 @@ function QBCore.Player.CheckPlayerData(source, PlayerData)
             apartmentType = nil,
             apartmentId = nil,
         }
-    }
-    PlayerData.metadata['phonedata'] = PlayerData.metadata['phonedata'] or {
-        SerialNumber = QBCore.Player.CreateSerialNumber(),
-        InstalledApps = {},
     }
     -- Job
     if PlayerData.job and PlayerData.job.name and not QBCore.Shared.Jobs[PlayerData.job.name] then PlayerData.job = nil end
@@ -665,20 +657,6 @@ function QBCore.Functions.CreateAccountNumber()
     return AccountNumber
 end
 
-function QBCore.Functions.CreatePhoneNumber()
-    local UniqueFound = false
-    local PhoneNumber = nil
-    while not UniqueFound do
-        PhoneNumber = math.random(100, 999) .. math.random(1000000, 9999999)
-        local query = '%' .. PhoneNumber .. '%'
-        local result = MySQL.prepare.await('SELECT COUNT(*) as count FROM players WHERE charinfo LIKE ?', { query })
-        if result == 0 then
-            UniqueFound = true
-        end
-    end
-    return PhoneNumber
-end
-
 function QBCore.Player.CreateFingerId()
     local UniqueFound = false
     local FingerId = nil
@@ -691,34 +669,6 @@ function QBCore.Player.CreateFingerId()
         end
     end
     return FingerId
-end
-
-function QBCore.Player.CreateWalletId()
-    local UniqueFound = false
-    local WalletId = nil
-    while not UniqueFound do
-        WalletId = 'QB-' .. math.random(11111111, 99999999)
-        local query = '%' .. WalletId .. '%'
-        local result = MySQL.prepare.await('SELECT COUNT(*) as count FROM players WHERE metadata LIKE ?', { query })
-        if result == 0 then
-            UniqueFound = true
-        end
-    end
-    return WalletId
-end
-
-function QBCore.Player.CreateSerialNumber()
-    local UniqueFound = false
-    local SerialNumber = nil
-    while not UniqueFound do
-        SerialNumber = math.random(11111111, 99999999)
-        local query = '%' .. SerialNumber .. '%'
-        local result = MySQL.prepare.await('SELECT COUNT(*) as count FROM players WHERE metadata LIKE ?', { query })
-        if result == 0 then
-            UniqueFound = true
-        end
-    end
-    return SerialNumber
 end
 
 PaycheckInterval() -- This starts the paycheck system

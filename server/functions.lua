@@ -78,18 +78,6 @@ function QBCore.Functions.GetPlayerByLicense(license)
     return QBCore.Player.GetPlayerByLicense(license)
 end
 
----Get player by phone number
----@param number number
----@return table?
-function QBCore.Functions.GetPlayerByPhone(number)
-    for src in pairs(QBCore.Players) do
-        if QBCore.Players[src].PlayerData.charinfo.phone == number then
-            return QBCore.Players[src]
-        end
-    end
-    return nil
-end
-
 ---Get player by account id
 ---@param account string
 ---@return table?
