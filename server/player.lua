@@ -516,6 +516,11 @@ function QBCore.Player.Save(source)
             position = json.encode(pcoords),
             metadata = json.encode(PlayerData.metadata)
         })
+        MySQL.insert('INSERT INTO player_monies (citizenid, cash, bank) VALUES (:citizenid, :cash, :bank) ON DUPLICATE KEY UPDATE cash = VALUES(cash), bank = VALUES(bank)', {
+            citizenid = PlayerData.citizenid,
+            cash = PlayerData.money.cash,
+            bank = PlayerData.money.bank
+        })
         if GetResourceState('qb-inventory') ~= 'missing' then exports['qb-inventory']:SaveInventory(source) end
         QBCore.ShowSuccess(GetCurrentResourceName(), PlayerData.name .. ' PLAYER SAVED!')
     else
