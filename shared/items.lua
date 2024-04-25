@@ -1,6 +1,6 @@
 QBShared = QBShared or {}
 QBShared.Items = {}
-local Items = json.decode(LoadResourceFile("vrcgta-qb", "items.json"))
+local Items = json.decode(LoadResourceFile("vrcgta-qbcore", "items.json"))
 -- dont work 2024-03-02 yukad2
 -- local additions = {
 -- }
