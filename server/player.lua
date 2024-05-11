@@ -10,12 +10,14 @@ function QBCore.Player.Login(source, citizenid, newData)
         if citizenid then
             local license = QBCore.Functions.GetIdentifier(source, 'license')
             local PlayerData = MySQL.prepare.await('SELECT * FROM players where citizenid = ?', { citizenid })
+            local condition = MySQL.prepare.await('SELECT * FROM player_conditions where citizenid = ?', { citizenid })
             if PlayerData and license == PlayerData.license then
                 PlayerData.money = json.decode(PlayerData.money)
                 PlayerData.job = json.decode(PlayerData.job)
                 PlayerData.position = json.decode(PlayerData.position)
                 PlayerData.metadata = json.decode(PlayerData.metadata)
                 PlayerData.charinfo = json.decode(PlayerData.charinfo)
+                PlayerData.condition = condition
                 if PlayerData.gang then
                     PlayerData.gang = json.decode(PlayerData.gang)
                 else
@@ -39,12 +41,14 @@ end
 function QBCore.Player.GetOfflinePlayer(citizenid)
     if citizenid then
         local PlayerData = MySQL.prepare.await('SELECT * FROM players where citizenid = ?', { citizenid })
+        local condition = MySQL.prepare.await('SELECT * FROM player_conditions where citizenid = ?', { citizenid })
         if PlayerData then
             PlayerData.money = json.decode(PlayerData.money)
             PlayerData.job = json.decode(PlayerData.job)
             PlayerData.position = json.decode(PlayerData.position)
             PlayerData.metadata = json.decode(PlayerData.metadata)
             PlayerData.charinfo = json.decode(PlayerData.charinfo)
+            PlayerData.condition = condition
             if PlayerData.gang then
                 PlayerData.gang = json.decode(PlayerData.gang)
             else
@@ -60,12 +64,14 @@ end
 function QBCore.Player.GetPlayerByLicense(license)
     if license then
         local PlayerData = MySQL.prepare.await('SELECT * FROM players where license = ?', { license })
+        local condition = MySQL.prepare.await('SELECT * FROM player_conditions where citizenid = ?', { citizenid })
         if PlayerData then
             PlayerData.money = json.decode(PlayerData.money)
             PlayerData.job = json.decode(PlayerData.job)
             PlayerData.position = json.decode(PlayerData.position)
             PlayerData.metadata = json.decode(PlayerData.metadata)
             PlayerData.charinfo = json.decode(PlayerData.charinfo)
+            PlayerData.condition = condition
             if PlayerData.gang then
                 PlayerData.gang = json.decode(PlayerData.gang)
             else
@@ -95,6 +101,15 @@ function QBCore.Player.CheckPlayerData(source, PlayerData)
     for moneytype, startamount in pairs(QBCore.Config.Money.MoneyTypes) do
         PlayerData.money[moneytype] = PlayerData.money[moneytype] or startamount
     end
+    -- Condition
+    PlayerData.condition = PlayerData.condition or {}
+    PlayerData.condition.health = PlayerData.condition.health or 200
+    PlayerData.condition.armor = PlayerData.condition.armor or 0
+    PlayerData.condition.hunger = PlayerData.condition.hunger or 100
+    PlayerData.condition.thirst = PlayerData.condition.thirst or 100
+    PlayerData.condition.stress = PlayerData.condition.stress or 0
+    PlayerData.condition.in_last_stand = PlayerData.condition.in_last_stand or false
+    PlayerData.condition.in_dead = PlayerData.condition.in_dead or false
 
     -- Charinfo
     PlayerData.charinfo = PlayerData.charinfo or {}
@@ -107,12 +122,6 @@ function QBCore.Player.CheckPlayerData(source, PlayerData)
     PlayerData.charinfo.account = PlayerData.charinfo.account or QBCore.Functions.CreateAccountNumber()
     -- Metadata
     PlayerData.metadata = PlayerData.metadata or {}
-    PlayerData.metadata['hunger'] = PlayerData.metadata['hunger'] or 100
-    PlayerData.metadata['thirst'] = PlayerData.metadata['thirst'] or 100
-    PlayerData.metadata['stress'] = PlayerData.metadata['stress'] or 0
-    PlayerData.metadata['isdead'] = PlayerData.metadata['isdead'] or false
-    PlayerData.metadata['inlaststand'] = PlayerData.metadata['inlaststand'] or false
-    PlayerData.metadata['armor'] = PlayerData.metadata['armor'] or 0
     PlayerData.metadata['ishandcuffed'] = PlayerData.metadata['ishandcuffed'] or false
     PlayerData.metadata['tracker'] = PlayerData.metadata['tracker'] or false
     PlayerData.metadata['injail'] = PlayerData.metadata['injail'] or 0
@@ -287,10 +296,58 @@ function QBCore.Player.CreatePlayer(PlayerData, Offline)
         self.Functions.UpdatePlayerData()
     end
 
+    function self.Functions.SetThirst(val)
+        self.PlayerData.condition.thirst = val
+        self.Functions.UpdatePlayerData()
+    end
+
+    function self.Functions.GetThirst() return self.PlayerData.condition.thirst end
+
+    function self.Functions.SetHunger(val)
+        self.PlayerData.condition.hunger = val
+        self.Functions.UpdatePlayerData()
+    end
+
+    function self.Functions.GetHunger() return self.PlayerData.condition.hunger end
+
+    function self.Functions.SetArmor(val)
+        self.PlayerData.condition.armor = val
+        self.Functions.UpdatePlayerData()
+    end
+
+    function self.Functions.GetArmor() return self.PlayerData.condition.armor end
+
+    function self.Functions.SetStress(val)
+        self.PlayerData.condition.stress = val
+        self.Functions.UpdatePlayerData()
+    end
+
+    function self.Functions.GetStress() return self.PlayerData.condition.stress end
+
+    function self.Functions.SetInDead(val)
+        self.PlayerData.condition.in_dead = val
+        self.Functions.UpdatePlayerData()
+    end
+
+    function self.Functions.SetInLastStand(val)
+        self.PlayerData.condition.in_last_stand = val
+        self.Functions.UpdatePlayerData()
+    end
+
     function self.Functions.SetMetaData(meta, val)
         if not meta or type(meta) ~= 'string' then return end
         if meta == 'hunger' or meta == 'thirst' then
             val = val > 100 and 100 or val
+        end
+        if meta == 'hunger' then
+            self.Functions.SetHunger(val)
+            self.Functions.UpdatePlayerData()
+            return
+        end
+        if meta == 'thirst' then
+            self.Functions.SetThirst(val)
+            self.Functions.UpdatePlayerData()
+            return
         end
         self.PlayerData.metadata[meta] = val
         self.Functions.UpdatePlayerData()
@@ -520,6 +577,17 @@ function QBCore.Player.Save(source)
             citizenid = PlayerData.citizenid,
             cash = PlayerData.money.cash,
             bank = PlayerData.money.bank
+        })
+        MySQL.insert('INSERT INTO player_conditions (citizenid, health, armor, hunger, thirst, stress, in_last_stand, in_dead, damages) VALUES (:citizenid, :health, :armor, :hunger, :thirst, :stress, :in_last_stand, :in_dead, :damages) ON DUPLICATE KEY UPDATE armor = VALUES(armor), hunger = VALUES(hunger), thirst = VALUES(thirst), stress = VALUES(stress), in_last_stand = VALUES(in_last_stand), in_dead = VALUES(in_dead)', {
+            citizenid = PlayerData.citizenid,
+            health = 200,   -- 初期化用の値
+            armor = 0,      -- 初期化用の値
+            hunger = PlayerData.condition.hunger or 100,
+            thirst = PlayerData.condition.thirst or 100,
+            stress = PlayerData.condition.stress or 0,
+            in_last_stand = PlayerData.condition.in_last_stand or false,
+            in_dead = PlayerData.condition.in_dead or false,
+            damages = '{}'
         })
         if GetResourceState('qb-inventory') ~= 'missing' then exports['qb-inventory']:SaveInventory(source) end
         QBCore.ShowSuccess(GetCurrentResourceName(), PlayerData.name .. ' PLAYER SAVED!')
