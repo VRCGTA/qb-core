@@ -11,6 +11,9 @@ function QBCore.Player.Login(source, citizenid, newData)
             local license = QBCore.Functions.GetIdentifier(source, 'license')
             local PlayerData = MySQL.prepare.await('SELECT * FROM players where citizenid = ?', { citizenid })
             local condition = MySQL.prepare.await('SELECT * FROM player_conditions where citizenid = ?', { citizenid })
+            condition = condition or {}
+            condition.in_last_stand = condition.in_last_stand == 1
+            condition.in_dead = condition.in_dead == 1
             if PlayerData and license == PlayerData.license then
                 PlayerData.money = json.decode(PlayerData.money)
                 PlayerData.job = json.decode(PlayerData.job)
