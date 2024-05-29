@@ -300,6 +300,7 @@ function QBCore.Player.CreatePlayer(PlayerData, Offline)
     end
 
     function self.Functions.SetThirst(val)
+        if val > 100 then val = 100 end
         self.PlayerData.condition.thirst = val
         self.Functions.UpdatePlayerData()
     end
@@ -307,6 +308,7 @@ function QBCore.Player.CreatePlayer(PlayerData, Offline)
     function self.Functions.GetThirst() return self.PlayerData.condition.thirst end
 
     function self.Functions.SetHunger(val)
+        if val > 100 then val = 100 end
         self.PlayerData.condition.hunger = val
         self.Functions.UpdatePlayerData()
     end
